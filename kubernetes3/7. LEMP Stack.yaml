@@ -101,6 +101,7 @@ metadata:
 data:
   host: bXlzcWxjb29sLXNlcnZpY2U=
 
+  
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -108,8 +109,7 @@ metadata:
   name: php-config
 data:
   php.ini: |
-     variables_order = "EGPCS"
-
+    variables_order = "EGPCS"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -127,7 +127,6 @@ spec:
       containers:
       - name: nginx-php-container
         image: webdevops/php-nginx:alpine-3-php7
-        resources: {}
         volumeMounts:
           - name: php-config
             mountPath: /opt/docker/etc/php/php.ini
@@ -158,6 +157,7 @@ spec:
             secretKeyRef:
               name: mysql-host
               key: host
+
       - name: mysql-container
         image: mysql:5.6
         ports:
@@ -201,7 +201,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: lamp-wp
+    app: lemp-wp
   ports:
   - port: 80
     targetPort: 80
@@ -216,7 +216,6 @@ spec:
     app: lemp-wp
   ports:
   - port: 3306
-    targetPort: 3306
 
 ---
 
