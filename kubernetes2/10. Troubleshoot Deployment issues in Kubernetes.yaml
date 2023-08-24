@@ -1,0 +1,5 @@
+Steps
+
+1. Run the command - kubectl edit deployment 
+2. Find the typo, one typo is to fix the image name to redis:alpine and second typo is the name of volume, fix it to redig-config.
+
