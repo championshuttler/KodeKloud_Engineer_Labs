@@ -102,7 +102,6 @@ data:
   host: bXlzcWxjb29sLXNlcnZpY2U=
 
 ---
-
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -128,6 +127,7 @@ spec:
       containers:
       - name: nginx-php-container
         image: webdevops/php-nginx:alpine-3-php7
+        resources: {}
         volumeMounts:
           - name: php-config
             mountPath: /opt/docker/etc/php/php.ini
@@ -162,6 +162,7 @@ spec:
         image: mysql:5.6
         ports:
         - containerPort: 3306
+        resources: {}
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
@@ -188,27 +189,11 @@ spec:
             secretKeyRef:
               name: mysql-host
               key: host
-
       volumes:
         - name: php-config
           configMap:
             name: php-config
 ---
-
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: mysql-service
-spec:
-  selector:
-    app: lemp-wp
-  ports:
-  - port: 3306
-    targetPort: 3306
-
----
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -221,6 +206,19 @@ spec:
   - port: 80
     targetPort: 80
     nodePort: 30008
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+spec:
+  selector:
+    app: lemp-wp
+  ports:
+  - port: 3306
+    targetPort: 3306
+
+---
 
 
 
