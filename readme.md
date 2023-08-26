@@ -12,3 +12,20 @@ To learn more, check out the following links:
 
 
 Readme is taken from https://github.com/joseeden/KodeKloud_Engineer_Labs/blob/main/README.md
+
+
+
+## Labs - Per Category 
+
+### Kubernetes 
+
+
+**Level 4**
+
+✔️ Lab 001 - [Deploy Redis Deployment on Kubernetes](./kubernetes4/1.%20Deploy%20Redis%20Deployment%20on%20Kubernetes.yaml)          
+✔️ Lab 002 - [Deploy MySQL on Kubernetes](./kubernetes4/2.%20Deploy%20MySQL%20on%20Kubernetes.yaml)           
+✔️ Lab 003 - [Kubernetes Nginx and PhpFPM Setup](./kubernetes4/3.%20Kubernetes%20Nginx%20and%20PhpFPM%20Setup.yaml)          
+✔️ Lab 004 - [Deploy Drupal App on Kubernetes](./kubernetes4/4.%20Deploy%20Drupal%20App%20on%20Kubernetes.yaml)           
+✔️ Lab 005 - [Deploy Guest Book App on Kubernetes](./kubernetes4/5.%20Deploy%20Guest%20Book%20App%20on%20Kubernetes.yaml)          
+
+----------------------------------------------
